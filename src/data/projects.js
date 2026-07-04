@@ -146,7 +146,7 @@ export const projects = [
       "Cyber security online learning platform which utilizes external APIs from social media platforms to enhance the platform's functionality and an in-built video storage database to train students on cyber crime awareness.",
     stack: ["Javascript", "HTML", "CSS", "Python"],
     outcome: "Personal R&D project — seeded the visual system used today.",
-    links: { demo: "#", code: "#" },
+    links: { demo: "https://cybertrain.netlify.app/", code: "#" },
     accent: "signal",
   },
 ];

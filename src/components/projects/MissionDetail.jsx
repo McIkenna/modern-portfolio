@@ -81,16 +81,17 @@ export default function MissionDetail({ project, onClose }) {
             >
               <a
                 href={project.links.demo}
+                target="_"
                 className="flex items-center gap-1.5 rounded-full bg-signal px-5 py-2.5 font-mono text-xs uppercase tracking-[0.15em] text-void focus-ring"
               >
                 Live Demo <ArrowUpRight size={14} />
               </a>
-              <a
+              {/* <a
                 href={project.links.code}
                 className="flex items-center gap-1.5 rounded-full border border-line px-5 py-2.5 font-mono text-xs uppercase tracking-[0.15em] text-fog focus-ring"
               >
                 Source <Code2 size={14} />
-              </a>
+              </a> */}
             </motion.div>
           </motion.div>
         </motion.div>

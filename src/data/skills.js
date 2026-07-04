@@ -157,7 +157,19 @@ export const skillRings = [
         name: "C#",
         level: 75,
         detail: "Object-oriented programming, game development, and application development using C# language.",
-      }
+      },
+      {
+        id: "django",
+        name: "Django",
+        level: 70,
+        detail: "Web development, ORM, and rapid application development with Django framework.",
+      },
+       {
+        id: "streamLit",
+        name: "StreamLit",
+        level: 75,
+        detail: "Rapid prototyping and deployment of data-driven web applications with Streamlit framework.",
+      },
     ],
   },
   {
@@ -188,6 +200,31 @@ export const skillRings = [
         name: "Illustrator",
         level: 75,
         detail: "Vector graphics, illustration, and logo design for branding and marketing materials.",
+      },
+     
+      {
+        id: "adobeXd",
+        name: "Adobe XD",
+        level: 70,
+        detail: "User experience design, wireframing, and interactive prototyping with Adobe XD.",
+      },
+      {
+        id: "afterEffects",
+        name: "AfterEffects",
+        level: 80,
+        detail: "Motion graphics, visual effects, and compositing for video and multimedia projects.",
+      },
+      {
+        id: "DaVinciResolve",
+        name: "DaVinci Resolve",
+        level: 75,
+        detail: "Color grading, video editing, and post-production for film and video projects using DaVinci Resolve.",
+      },
+      {
+        id: "capcut",
+        name: "CapCut",
+        level: 70,
+        detail: "Video editing, social media content creation, and mobile-friendly video production with CapCut."
       }
       
     ],

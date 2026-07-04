@@ -12,7 +12,7 @@ export default function Projects() {
       <SectionHeader
         eyebrow="Mission Select"
         title="Projects"
-        description="Six missions, six different problem spaces. Click a card to open the full brief."
+        description="A collection of my completed projects, showcasing my skills and experience in various areas of software development, design, and problem-solving."
       />
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

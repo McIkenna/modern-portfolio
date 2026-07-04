@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, Radio } from "lucide-react";
 import MagneticButton from "../ui/MagneticButton";
+import emailjs from "@emailjs/browser";
+
 
 const FIELDS = [
   { id: "name", label: "Callsign", placeholder: "Your name", type: "text" },
@@ -12,20 +14,43 @@ export default function Terminal() {
   const [values, setValues] = useState({ name: "", email: "", message: "" });
   const [focused, setFocused] = useState(null);
   const [status, setStatus] = useState("idle"); // idle | sending | sent
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;   // from Email Services
+  const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;  // from Email Templates
+  const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY; // from Account → General
+
+ const handleSubmit = async (e) => {
     e.preventDefault();
     if (!values.name || !values.email || !values.message) return;
     setStatus("sending");
-    setTimeout(() => setStatus("sent"), 1400);
+    setError(null);
+ 
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: values.name,
+          from_email: values.email,
+          message: values.message,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+      setStatus("sent");
+    } catch (err) {
+      console.error("EmailJS send failed:", err);
+      setStatus("idle");
+      setError("Transmission failed — please try again.");
+    }
   };
 
-  return (
+   return (
     <div className="panel relative overflow-hidden p-6 sm:p-10">
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
         <div className="h-full w-full animate-scanline bg-gradient-to-b from-transparent via-fog to-transparent" />
       </div>
-
+ 
       <div className="mb-8 flex items-center gap-3">
         <span className="relative flex h-8 w-8 items-center justify-center rounded-full border border-teal/40">
           <Radio size={14} className="text-teal" />
@@ -38,7 +63,7 @@ export default function Terminal() {
           </p>
         </div>
       </div>
-
+ 
       <AnimatePresence mode="wait">
         {status !== "sent" ? (
           <motion.form
@@ -78,7 +103,7 @@ export default function Terminal() {
                 </div>
               ))}
             </div>
-
+ 
             <div className="relative">
               <label
                 htmlFor="message"
@@ -106,7 +131,17 @@ export default function Terminal() {
                 transition={{ duration: 0.3 }}
               />
             </div>
-
+ 
+            {error && (
+              <motion.p
+                initial={{ opacity: 0, y: -6 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="rounded-lg border border-danger/40 bg-danger/10 px-4 py-2.5 font-mono text-xs text-danger"
+              >
+                {error}
+              </motion.p>
+            )}
+ 
             <MagneticButton
               type="submit"
               disabled={status === "sending"}
