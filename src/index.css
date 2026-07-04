@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --color-void: 255 255 255;
+  --color-void-soft: 245 247 250;
+  --color-void-panel: 255 255 255;
+  --color-fog: 0 0 0;
+  --color-mist: 55 65 81;
+  --color-line: 209 213 219;
+  --color-grid: 17 24 39;
+  --color-particle: 17 24 39;
+  --body-orb-primary: rgba(139, 127, 255, 0.07);
+  --body-orb-secondary: rgba(20, 184, 166, 0.06);
+  --selection-color: #ffffff;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-void: 8 9 12;
+  --color-void-soft: 16 18 24;
+  --color-void-panel: 20 22 29;
+  --color-fog: 244 243 239;
+  --color-mist: 138 141 152;
+  --color-line: 39 41 51;
+  --color-grid: 244 243 239;
+  --color-particle: 244 243 239;
+  --body-orb-primary: rgba(139, 127, 255, 0.08);
+  --body-orb-secondary: rgba(94, 234, 212, 0.05);
+  --selection-color: #ffffff;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-void text-fog font-body antialiased;
+  background-image: radial-gradient(
+      circle at 20% 0%,
+      var(--body-orb-primary),
+      transparent 45%
+    ),
+    radial-gradient(circle at 85% 100%, var(--body-orb-secondary), transparent 50%);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(139, 127, 255, 0.35);
+  color: var(--selection-color);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 127, 255, 0.3);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 127, 255, 0.5);
+}
+
+@media (pointer: fine) {
+  a,
+  button,
+  [role="button"],
+  .cursor-none-target {
+    cursor: none;
+  }
+}
+
+.bg-grid {
+  background-image: linear-gradient(rgb(var(--color-grid) / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--color-grid) / 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.text-glow {
+  text-shadow: 0 0 30px rgba(139, 127, 255, 0.5);
+}
+
+.mono-label {
+  @apply font-mono text-[11px] uppercase tracking-[0.25em] text-mist;
+}
+
+.panel {
+  @apply relative rounded-2xl border border-line bg-void-panel/60 backdrop-blur-xl;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.focus-ring {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 focus-visible:ring-offset-void;
+}
