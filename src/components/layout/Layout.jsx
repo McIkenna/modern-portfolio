@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
-import { useLocation, Outlet } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import {  Outlet } from "react-router-dom";
+// import { AnimatePresence } from "framer-motion";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import MouseGlow from "./MouseGlow";
@@ -12,7 +12,7 @@ import CustomCursor from "./CustomCursor";
 import { useKonami } from "../../hooks/useKonami";
 
 export default function Layout({ theme, onToggleTheme }) {
-  const location = useLocation();
+  // const location = useLocation();
   const [consoleOpen, setConsoleOpen] = useState(false);
   const [toast, setToast] = useState(null);
 
@@ -48,11 +48,11 @@ export default function Layout({ theme, onToggleTheme }) {
       </div>
       <Nav theme={theme} onToggleTheme={onToggleTheme} />
 
-      <AnimatePresence mode="wait">
-        <PageTransition key={location.pathname}>
+      {/* <AnimatePresence mode="wait"> */}
+        <PageTransition >
           <Outlet />
         </PageTransition>
-      </AnimatePresence>
+      {/* </AnimatePresence> */}
 
       <Footer />
 
