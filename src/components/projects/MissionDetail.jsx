@@ -73,12 +73,13 @@ export default function MissionDetail({ project, onClose }) {
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="mt-8 flex gap-3"
-            >
+            {project.links.demo && project.links.demo.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="mt-8 flex gap-3"
+              >
               <a
                 href={project.links.demo}
                 target="_"
@@ -92,7 +93,7 @@ export default function MissionDetail({ project, onClose }) {
               >
                 Source <Code2 size={14} />
               </a> */}
-            </motion.div>
+            </motion.div>)}
           </motion.div>
         </motion.div>
       )}

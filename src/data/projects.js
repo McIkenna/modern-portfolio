@@ -15,6 +15,21 @@ export const projects = [
     accent: "gold",
   },
   {
+    id: "lendsqr",
+    codename: "Lendsqr",
+    role: "Frontend Developer",
+    difficulty: "B",
+    year: "2026",
+    summary:
+      "A platform for managing financial data and transactions, providing a seamless user experience for customers and administrators.",
+    brief:
+      "I built the frontend of the Lendsqr platform using React and Next.js, integrating with the backend APIs to provide a seamless user experience for managing financial data and transactions.",
+    stack: ["React", "React-AgGrid", "Zustand"],
+    outcome: "Improved user experience and reduced onboarding time.",
+    links: { demo: "https://lendsql-assessment-g49vr2rbr-mcikennas-projects.vercel.app/", code: "#" },
+    accent: "teal",
+  },
+  {
     id: "Ayo2D",
     codename: "Ayo2D",
     role: "Lead Engineer",
@@ -71,7 +86,7 @@ export const projects = [
       "I built a generative AI interface using React and react-redux, which interacts with the LLM from the backend developed by integrating Llama generative AI in Python, while using FastAPI to expose the endpoints, the response from this LLM is sent via an API using an event stream",
     stack: ["Next.js", "React", "React-AgGrid", "AWS", "FastAPI", "Llama", "LangChain", "Zustand"],
     outcome: "Reduced incident response time by 61% for the ops team.",
-    links: { demo: "#", code: "#" },
+    links: { demo: "", code: "#" },
     accent: "gold",
   },
   {
@@ -86,7 +101,7 @@ export const projects = [
       "Developed the Access and Observability Portal for NAEDAI, enabling teams to discover available data products and monitor observable metrics for improved data governance.",
     stack: ["React", "Material UI", "PostgreSQL", "AWS"],
     outcome: "Adopted by 7 teams, cut new-feature UI review time by 40%.",
-    links: { demo: "#", code: "#" },
+    links: { demo: "", code: "#" },
     accent: "teal",
   },
   {
@@ -101,7 +116,7 @@ export const projects = [
       "This application allows Nike to better understand customer preferences, improve their products and marketing strategies, and make data-driven decisions across the organization.",
     stack: ["TypeScript", "Node.js", "ExpressJS", "Apache Kafka", "AWS"],
     outcome: "Scaled to 500+ concurrent sessions with zero merge conflicts reported.",
-    links: { demo: "#", code: "#" },
+    links: { demo: "", code: "#" },
     accent: "teal",
   },
   {
@@ -116,7 +131,7 @@ export const projects = [
       "Provides real-time data and analytics on factory performance, enabling the company to make informed decisions on supply chain management and improve overall efficiency",
     stack: ["React", "Node.js", "GraphQL"],
     outcome: "Checkout conversion up 23% in the first quarter post-launch.",
-    links: { demo: "#", code: "#" },
+    links: { demo: "", code: "#" },
     accent: "gold",
   },
   {
@@ -131,7 +146,7 @@ export const projects = [
       "The e-commerce platform allows retail sellers to connect with customers within a specific geographic location for easy communication and product delivery. The platform allows sellers to manage inventory, process orders, and handle customer interactions efficiently. Additionally, the platform provides features such as real-time tracking of product delivery, customer reviews and ratings, and secure payment options.",
     stack: ["React", "Java", "Spring Boot", "AWS"],
     outcome: "Launched in 2020, currently serving 10K+ active users with a 4.5-star rating on the app store.",
-    links: { demo: "#", code: "#" },
+    links: { demo: "", code: "#" },
     accent: "teal",
   },
   {
